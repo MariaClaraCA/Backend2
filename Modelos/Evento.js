@@ -1,20 +1,20 @@
 
 export default class Evento {
     #codigo;
-    #Nome_Evento;
-    #Data_Hora;
-    #Local_Evento;
-    #Preco;
-    #Quantidade_ingresso;
+    #nomeevent;
+    #dataehora;
+    #localevent;
+    #preco;
+    #quant_ingres;
 
 
-    constructor(codigo = 0, Nome_Evento = "", Data_Hora = "", Local_Evento = "", Preco = "", Quantidade_ingresso = "") {
+    constructor(codigo = 0, nomeevent = "", dataehora = "", localevent = "", preco = "", quant_ingres = "") {
         this.#codigo = codigo;
-        this.#Nome_Evento = Nome_Evento;
-        this.#Data_Hora = Data_Hora;
-        this.#Local_Evento = Local_Evento;
-        this.#Preco = Preco;
-        this.#Quantidade_ingresso = Quantidade_ingresso;
+        this.#nomeevent = nomeevent;
+        this.#dataehora = dataehora;
+        this.#localevent = localevent;
+        this.#preco = preco;
+        this.#quant_ingres = quant_ingres;
     }
 
     
@@ -22,53 +22,53 @@ export default class Evento {
         return this.#codigo;
     }
 
-    get Nome_Evento() {
-        return this.#Nome_Evento;
+    get nomeevent() {
+        return this.#nomeevent;
     }
 
-    get Data_Hora() {
-        return this.#Data_Hora;
+    get dataehora() {
+        return this.#dataehora;
     }
 
-    get Local_Evento() {
-        return this.#Local_Evento;
+    get localevent() {
+        return this.#localevent;
     }
 
-    get Preco() {
-        return this.#Preco;
+    get preco() {
+        return this.#preco;
     }
 
-    get Quantidade_ingresso() {
-        return this.#Quantidade_ingresso;
+    get quant_ingres() {
+        return this.#quant_ingres;
     }
     
     set codigo(newValue) {
         this.#codigo = newValue;
     }
 
-    set Nome_Evento(newValue) {
-        this.#Nome_Evento = newValue;
+    set nomeevent(newValue) {
+        this.#nomeevent = newValue;
     }
 
-    set Data_Hora(newValue) {
-        this.#Data_Hora = newValue;
+    set dataehora(newValue) {
+        this.#dataehora = newValue;
     }
 
-    set Local_Evento(newValue) {
-        this.#Local_Evento = newValue;
+    set localevent(newValue) {
+        this.#localevent = newValue;
     }
 
-    set Preco(newValue) {
-        this.#Preco = newValue;
+    set preco(newValue) {
+        this.#preco = newValue;
     }
 
-    set Quantidade_ingresso(newValue) {
-        this.#Quantidade_ingresso = newValue;
+    set quant_ingres(newValue) {
+        this.#quant_ingres = newValue;
     }
 
   
     toString() {
-        return `Evento [${this.#codigo}]: ${this.#Nome_Evento}, Data: ${this.#Data_Hora}`;
+        return `Evento [${this.#codigo}]: ${this.#nomeevent}, Data: ${this.#dataehora}`;
     }
     gravar() {
         return new Promise((resolve, reject) => {
@@ -77,7 +77,7 @@ export default class Evento {
             if (Math.random() < 0.5) {
               resolve();
             } else {
-              reject(new Error('Falha ao gravar o evento'));
+              reject(new Error('Erro em gravar'));
             }
           }, 1000);
         });
@@ -88,11 +88,11 @@ export default class Evento {
     toJSON() {
         return {
             codigo: this.#codigo,
-            Nome_Evento: this.#Nome_Evento,
-            Data_Hora: this.#Data_Hora,
-            Local_Evento: this.#Local_Evento,
-            Preco: this.#Preco,
-            Quantidade_ingresso: this.#Quantidade_ingresso,
+            nomeevent: this.#nomeevent,
+            dataehora: this.#dataehora,
+            localevent: this.#localevent,
+            preco: this.#preco,
+            quant_ingres: this.#quant_ingres,
         }
     }
 }
