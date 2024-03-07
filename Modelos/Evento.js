@@ -1,4 +1,4 @@
-// Evento.js
+
 export default class Evento {
     #codigo;
     #Nome_Evento;
@@ -17,7 +17,7 @@ export default class Evento {
         this.#Quantidade_ingresso = Quantidade_ingresso;
     }
 
-    // Getters
+    
     get codigo() {
         return this.#codigo;
     }
@@ -41,7 +41,7 @@ export default class Evento {
     get Quantidade_ingresso() {
         return this.#Quantidade_ingresso;
     }
-    // Setters
+    
     set codigo(newValue) {
         this.#codigo = newValue;
     }
@@ -66,13 +66,13 @@ export default class Evento {
         this.#Quantidade_ingresso = newValue;
     }
 
-    // Método para representar o objeto Evento como string
+  
     toString() {
         return `Evento [${this.#codigo}]: ${this.#Nome_Evento}, Data: ${this.#Data_Hora}`;
     }
     gravar() {
         return new Promise((resolve, reject) => {
-          // Simulando a gravação em um banco de dados
+          
           setTimeout(() => {
             if (Math.random() < 0.5) {
               resolve();
@@ -84,7 +84,7 @@ export default class Evento {
       }
     
 
-    // Método para converter o objeto Evento para um formato JSON
+    
     toJSON() {
         return {
             codigo: this.#codigo,

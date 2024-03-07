@@ -8,14 +8,14 @@ export default async function conectar() {
     else {
         const pool = mysql.createPool({
             host: 'localhost',
-            user: 'root', //não é recomendado usar o super usuário
+            user: 'root',
             password: '',
             port: 3306,
             database: 'backend2',
             waitForConnections: true,
             connectionLimit: 10,
-            maxIdle: 10, // max idle connections, the default value is the same as connectionLimit
-            idleTimeout: 360000, // idle connections timeout, in milliseconds, the default value 60000
+            maxIdle: 10,
+            idleTimeout: 360000,
             queueLimit: 0,
             enableKeepAlive: true,
             keepAliveInitialDelay: 0,

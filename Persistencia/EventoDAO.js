@@ -5,7 +5,7 @@ export default class EventoDAO {
     async gravar(evento) {
         const conexao = await conectar();
         try {
-            const sql = `INSERT INTO evento (nome_evento, data_hora, local_evento, preco, quantidade_ingresso) 
+            const sql = `INSERT INTO evento (nome_evento, data_hora, local_evento, preco, Quantidade_ingresso) 
                          VALUES (?, ?, ?, ?, ?)`;
             const parametros = [
                 evento.Nome_Evento,
@@ -24,7 +24,7 @@ export default class EventoDAO {
     async atualizar(evento) {
         const conexao = await conectar();
         try {
-            const sql = `UPDATE evento SET sobre_evento = ?, nome_evento = ?, data_hora = ?, local_evento = ?, preco = ?, quantidade_ingresso = ?, WHERE id = ?`;
+            const sql = `UPDATE evento SET sobre_evento = ?, nome_evento = ?, data_hora = ?, local_evento = ?, preco = ?, Quantidade_ingresso = ?, WHERE id = ?`;
             const parametros = [
                 evento.codigo,
                 evento.Nome_Evento,
