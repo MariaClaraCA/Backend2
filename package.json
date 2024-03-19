@@ -1,0 +1,30 @@
+{
+  "name": "trabalho-ppi2",
+  "version": "1.0.0",
+  "description": "Trabalho da aula de PPI2",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariaClaraCA/Backend2.git"
+  },
+  "keywords": [
+    "aula",
+    "programação",
+    "aula",
+    "comandos"
+  ],
+  "author": "Maria Clara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MariaClaraCA/Backend2/issues"
+  },
+  "homepage": "https://github.com/MariaClaraCA/Backend2#readme",
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}
