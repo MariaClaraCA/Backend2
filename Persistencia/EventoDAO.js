@@ -20,11 +20,10 @@ export default class EventoDAO {
             if (conexao && conexao.release) conexao.release();
         }
     }
-
     async atualizar(evento) {
         const conexao = await conectar();
         try {
-            const sql = `UPDATE evento SET sobre_evento = ?, nomeevent = ?, dataehora = ?, localevent = ?, preco = ?, quant_ingres = ?, WHERE id = ?`;
+            const sql = `UPDATE evento SET nomeevent = ?, dataehora = ?, localevent = ?, preco = ?, quant_ingres = ? WHERE id = ?`;
             const parametros = [
                 evento.codigo,
                 evento.nomeevent,
@@ -50,7 +49,6 @@ export default class EventoDAO {
             if (conexao && conexao.release) conexao.release();
         }
     }
-
     async consultar(termoDePesquisa) {
         const conexao = await conectar();
         try {

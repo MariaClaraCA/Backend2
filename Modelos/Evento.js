@@ -1,4 +1,4 @@
-
+import EventoDAO from "../Persistencia/EventoDAO.js";
 export default class Evento {
     #codigo;
     #nomeevent;
@@ -6,7 +6,6 @@ export default class Evento {
     #localevent;
     #preco;
     #quant_ingres;
-
 
     constructor(codigo = 0, nomeevent = "", dataehora = "", localevent = "", preco = "", quant_ingres = "") {
         this.#codigo = codigo;
@@ -67,21 +66,30 @@ export default class Evento {
     }
 
   
-    toString() {
-        return `Evento [${this.#codigo}]: ${this.#nomeevent}, Data: ${this.#dataehora}`;
+    async gravar(){
+        const dao = new EventoDAO();
+        await dao.gravar(this); 
     }
-    gravar() {
-        return new Promise((resolve, reject) => {
-          
-          setTimeout(() => {
-            if (Math.random() < 0.5) {
-              resolve();
-            } else {
-              reject(new Error('Erro em gravar'));
-            }
-          }, 1000);
-        });
-      }
+
+    async atualizar(){
+        const dao = new EventoDAO();
+        await dao.atualizar(this);
+    }
+
+    async excluir(){
+        const dao = new EventoDAO();
+        await dao.excluir(this);
+    }
+
+    async consultar(termoDePesquisa){
+        const dao = new EventoDAO();
+        return await dao.consultar(termoDePesquisa);
+    }
+
+
+    toString(){
+        return `Evento código: ${this.#codigo} -  nome: ${this.#nomeevent}`;
+    }
     
 
     
